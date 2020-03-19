@@ -69,3 +69,11 @@ scrape_configs:
         - 'kafka-lag-exporter:9999'
         labels:
            env: 'dev'
+
+  - job_name: 'streams'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - 'streams:1234'
+        labels:
+          env: 'dev'
